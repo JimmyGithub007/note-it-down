@@ -18,9 +18,7 @@
 Route::get('login', 'HomeController@login')->name('login');
 Route::get('register', 'HomeController@register')->name('register');
 
-Route::group(['before'=>'auth'], function(){
-	Route::get('main', 'HomeController@index')->name('main');
-});	
+Route::get('main', 'HomeController@index')->name('main')->middleware('auth');
 
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@store');

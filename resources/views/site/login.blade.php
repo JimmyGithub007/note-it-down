@@ -76,7 +76,7 @@
 					},
 					success:function(data){
 						if(data.status == 'error'){
-							//<?php $errors ?> = data.message
+							console.log(data)
 						}else{
 							window.location.href = data.url;
 						}
